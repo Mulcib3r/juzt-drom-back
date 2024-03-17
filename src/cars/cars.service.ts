@@ -43,7 +43,7 @@ export class CarsService {
 
 	async getTotalPages(limit: number) {
 		const totalCars = await this.prisma.car.count();
-		const totalPages = Math.round(totalCars / limit);
+		const totalPages = Math.ceil(totalCars / limit);
 		return totalPages;
 	}
 
